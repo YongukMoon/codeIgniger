@@ -1,4 +1,4 @@
-## php 내장 서버  
+## php server  
   
 >php -S localhost:8000 -t $dir  
   
