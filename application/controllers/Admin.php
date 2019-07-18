@@ -2,9 +2,18 @@
 
 class Admin extends CI_controller
 {
+    public function __construct(){
+        parent::__construct();
+        $this->load->database();
+        $this->load->model('Admin_model');
+    }
+
     // url/index.php/class/method
     public function index(){
-        echo "test";
+        
+        $datas=$this->Admin_model->gets();
+
+        $this->load->view('main', array('datas'=>$datas));
     }
 
     // url/index.php/class/method/$params
@@ -26,5 +35,11 @@ class Admin extends CI_controller
         
         // 뷰분기
         $this->load->view('footer');
+    }
+
+    public function get($id){
+        $topic=$this->Admin_model->get($id);
+
+        $this->load->view('get', array('topic'=>$topic));
     }
 }
