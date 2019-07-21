@@ -7,4 +7,8 @@ class Editor extends CI_Controller {
 	{
 		$this->load->view('editor_form');
 	}
+
+	public function store(){
+		//
+	}
 }
