@@ -14,7 +14,15 @@ class Topic_model extends CI_Model
     }
 
     public function topic_model(){
+        //db 에서 title 칼럼만 가져온다
+        $this->db->select('title');
 
+        //파일의 형식을 변환
+        $this->db->select('UNIX_TIMESTAMP(created) AS created');
+        // date('o년 n월 j일, G시 i분 s초', $topic->created)
+        // UNIX_TIMESTAMP 를 이용해서 한국시간 출력하는 PHP 함수
+
+        return $this->db->get_where('topic', array('id'=>$topic_id))->row();
     }
 
     public function get($topic_id){

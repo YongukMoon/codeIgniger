@@ -42,4 +42,19 @@ class Admin extends CI_controller
 
         $this->load->view('get', array('topic'=>$topic));
     }
+
+    public function helper(){
+        //helper 가져오기
+        $this->load->helper('url');
+
+        //helper 두개 가져오기
+        $this->load->helper(array('url', 'HTML'));
+
+        //직접 제작한 헬퍼 : korean_helper.php 로드
+        $this->load->helper('korean');
+        //kdate($topic->created);
+        //헬퍼에 있는 함수 실행
+        
+        // config/autoload.php 에서 자동로드 가능
+    }
 }
