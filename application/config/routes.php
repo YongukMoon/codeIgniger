@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//parameter : $1 -> 첫번째 괄호, $2 -> 두번째 괄호, ... 
+$route['topic/(:num)']='topic/get/$1';
+$route['post/(:num)']='topic/get/$1';
+
+//정규표현식 사용
+// + : 수량 한정자, 하나이상
+// \d : 숫자
+$route['topic/([a-z]+)/([a-z]+)/(\d+)']="$1/$2/$3";
