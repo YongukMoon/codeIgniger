@@ -15,3 +15,13 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+var_dump($this->config->item('base_url'));
+?>
+
+
+<?php if($this->config->item('is_dev')){ ?>
+    <div>
+        개발환경을 수정 중입니다.
+    </div>
+<?php } ?>

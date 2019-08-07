@@ -24,6 +24,9 @@ class Admin extends CI_controller
     // views/test.php 로드
     // www/assets/css css는 views에 포함시키지 말것
     public function store($params){
+        //사용자정의 config 로드하기
+        $this->load->config('sample');
+
         // view 에 데이터 넘기기
         $data=array('params' => $params);
 
