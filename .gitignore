@@ -29,5 +29,3 @@ upload/
 /application/config/database.php
 /application/config/config.php
 /dev.php
-/application/config/development/
-/application/config/production/

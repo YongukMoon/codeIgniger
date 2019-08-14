@@ -11,9 +11,11 @@ class Admin extends CI_controller
     // url/index.php/class/method
     public function index(){
         
-        $datas=$this->Admin_model->gets();
+        // $datas=$this->Admin_model->gets();
 
-        $this->load->view('main', array('datas'=>$datas));
+        // $this->load->view('main', array('datas'=>$datas));
+
+        $this->load->view('board_index');
     }
 
     // url/index.php/class/method/$params
