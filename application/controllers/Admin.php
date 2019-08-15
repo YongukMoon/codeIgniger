@@ -6,10 +6,12 @@ class Admin extends CI_controller
         parent::__construct();
         $this->load->database();
         $this->load->model('Admin_model');
+        log_message('debug', 'topic 초기화');
     }
 
     // url/index.php/class/method
     public function index(){
+        log_message('debug', 'index 호출');
         
         // $datas=$this->Admin_model->gets();
 
@@ -20,6 +22,15 @@ class Admin extends CI_controller
 
     // url/index.php/class/method/$params
     public function create($params){
+        $data = [];
+        //텍스트 log 출력
+        log_message('info', var_export($data, 1));
+
+        if(empty($data)){
+            log_message('error', 'topic이 없습니다.');
+            show_error('topic이 없습니다.');
+        }
+
         echo $params;
     }
 
